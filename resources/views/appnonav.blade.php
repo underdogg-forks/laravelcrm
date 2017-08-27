@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lite CRM</title>
 
-	@include('partials/css')
+  @include('partials/css')
   @include('partials/js')
 
 </head>
 <body>
 
-  @yield('content')
+@yield('content')
 
 </body>
 </html>

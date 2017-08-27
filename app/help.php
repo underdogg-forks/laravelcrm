@@ -2,8 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class help extends Model {
+class help extends Model
+{
 
-	//
-
+    //
 }
