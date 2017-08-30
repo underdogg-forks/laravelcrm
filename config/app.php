@@ -2,6 +2,26 @@
 return [
     /*
     |--------------------------------------------------------------------------
+    | Application Environment
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the "environment" your application is currently
+    | running in. This may determine how you prefer to configure various
+    | services your application utilizes. Set this in your ".env" file.
+    |
+    */
+    'env' => env('APP_ENV', 'production'),
+    /*
+    |--------------------------------------------------------------------------
+    | Application Name
+    |--------------------------------------------------------------------------
+    |
+    | The application name for use within the UI of the application
+    |
+    */
+    'name' => 'Laravel 5 Bootstrap',
+    /*
+    |--------------------------------------------------------------------------
     | Application Debug Mode
     |--------------------------------------------------------------------------
     |
@@ -10,7 +30,7 @@ return [
     | application. If disabled, a simple generic error page is shown.
     |
     */
-    'debug' => env('APP_DEBUG'),
+    'debug' => env('APP_DEBUG', false),
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -21,7 +41,7 @@ return [
     | your application so that it is used when running Artisan tasks.
     |
     */
-    'url' => 'http://localhost',
+    'url' => env('APP_URL', '127.0.0.1'),
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -43,7 +63,7 @@ return [
     | to any of the locales which will be supported by the application.
     |
     */
-    'locale' => 'en',
+    'locale' => env('APP_LOCALE', 'en'),
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -54,7 +74,17 @@ return [
     | the language folders that are provided through your application.
     |
     */
-    'fallback_locale' => 'en',
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
+    /*
+    |--------------------------------------------------------------------------
+    | PHP Locale Code
+    |--------------------------------------------------------------------------
+    |
+    | The PHP locale determines the default locale that will be used
+    | by the Carbon library when setting Carbon's localization.
+    |
+    */
+    'locale_php' => env('APP_LOCALE_PHP', 'en_US'),
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
@@ -66,7 +96,7 @@ return [
     |
     */
     'key' => env('APP_KEY', 'SomeRandomString'),
-    'cipher' => MCRYPT_RIJNDAEL_128,
+    'cipher' => 'AES-256-CBC',
     /*
     |--------------------------------------------------------------------------
     | Logging Configuration
@@ -79,7 +109,8 @@ return [
     | Available Settings: "single", "daily", "syslog", "errorlog"
     |
     */
-    'log' => 'daily',
+    'log' => env('APP_LOG', 'daily'),
+    'log_level' => env('APP_LOG_LEVEL', 'debug'),
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -168,5 +199,16 @@ return [
         'URL' => 'Illuminate\Support\Facades\URL',
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
+
+        /*
+         * Third Party Aliases
+         */
+        //'Active' => HieuLe\Active\Facades\Active::class,
+        //'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        //'Captcha' => Arcanedev\NoCaptcha\Facades\NoCaptcha::class,
+        //'Form' => Collective\Html\FormFacade::class,
+        //'Gravatar' => Creativeorange\Gravatar\Facades\Gravatar::class,
+        //'Html' => Collective\Html\HtmlFacade::class,
+        //'Socialite' => Laravel\Socialite\Facades\Socialite::class,
     ],
 ];
